@@ -1,14 +1,18 @@
 <template>
   <div class="main">
     <p>{{ count }}</p>
-    <button v-on:click="clickIncrease">Increase</button>
-    <button v-on:click="clickDecrease">Decrease</button>
+    <ControlBar v-on:clickIncrease="clickIncrease" v-on:clickDecrease="clickDecrease"></ControlBar>
   </div>
 </template>
 
 <script>
+import ControlBar from './ControlBar.vue'
+
 export default {
   name: 'HelloWorld',
+  components: {
+    ControlBar
+  },
   props: {
     msg: String
   },
