@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <p>{{ count }}</p>
-    <ControlBar v-on:clickIncrease="clickIncrease" v-on:clickDecrease="clickDecrease"></ControlBar>
+    <ControlBar v-on:clickButton="clickControl"></ControlBar>
   </div>
 </template>
 
@@ -22,11 +22,8 @@ export default {
     }
   },
   methods: {
-    clickIncrease() {
-      this.count++;
-    },
-    clickDecrease() {
-      this.count--;
+    clickControl($change) {
+      this.count += $change;
     }
   }
 }
