@@ -1,6 +1,8 @@
 <template>
   <div class="main">
     <p>{{ count }}</p>
+    <button v-on:click="clickIncrease">Increase</button>
+    <button v-on:click="clickDecrease">Decrease</button>
   </div>
 </template>
 
@@ -13,6 +15,14 @@ export default {
   data() {
     return {
       count: 0
+    }
+  },
+  methods: {
+    clickIncrease() {
+      this.count++;
+    },
+    clickDecrease() {
+      this.count--;
     }
   }
 }
